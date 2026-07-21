@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Empatty Dent — instrumente de practică pentru studenți și medici stomatologi." />
+    <title>Empatty Dent — Practică. Precizie. Încredere.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="announcement">Livrare gratuită în România pentru comenzi de peste 300 lei <span>•</span> Produse create pentru progresul tău</div>
+    <header class="header">
+      <a class="brand" href="#acasa" aria-label="Empatty Dent acasă"><span class="brand-mark">E</span><span>Empatty <i>Dent</i></span></a>
+      <button class="menu-btn" aria-label="Deschide meniul" aria-expanded="false">☰</button>
+      <nav aria-label="Navigare principală">
+        <a href="#produse">Magazin</a><a href="#despre">Despre noi</a><a href="#cum-functioneaza">Cum funcționează</a><a href="#contact">Contact</a>
+      </nav>
+      <button class="cart-button" aria-label="Vezi coșul"><span>Coș</span><b class="cart-count">0</b></button>
+    </header>
+
+    <main id="acasa">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">PENTRU VIITORII MEDICI DENTIȘTI</p>
+          <h1>Practica ce îți dă <em>încredere.</em></h1>
+          <p class="hero-text">Modele anatomice, kituri complete și exerciții atent gândite pentru mâini sigure și rezultate precise.</p>
+          <div class="hero-actions"><a class="btn primary" href="#produse">Descoperă produsele <span>→</span></a><a class="btn text" href="#despre">Povestea noastră</a></div>
+          <div class="trust"><div><strong>Creat pentru</strong><span>studenți & medici</span></div><div><strong>Practică reală</strong><span>pas cu pas</span></div><div><strong>Livrare rapidă</strong><span>în România</span></div></div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-circle"></div><div class="hero-card note-card">PRECIZIE<br>ÎN FIECARE<br>MIȘCARE <span>✦</span></div>
+          <img src="assets/model-set.png" alt="Set de modele pentru restaurări dentare" />
+        </div>
+      </section>
+
+      <section class="benefits" aria-label="Beneficii">
+        <div><span>✦</span><p><b>Concepute pentru practică</b>Modele realiste și exerciții clare</p></div>
+        <div><span>⌁</span><p><b>De la bază la precizie</b>Înveți în ritmul tău</p></div>
+        <div><span>◌</span><p><b>Resurse fizice & digitale</b>Tot ce ai nevoie într-un loc</p></div>
+      </section>
+
+      <section id="produse" class="products section">
+        <div class="section-heading"><div><p class="eyebrow">MAGAZIN EMPATTY DENT</p><h2>Alege următorul pas<br>în practica ta.</h2></div><div class="filters" role="group" aria-label="Filtre produse"><button class="active" data-filter="all">Toate</button><button data-filter="modele">Modele</button><button data-filter="kituri">Kituri</button><button data-filter="digital">Digital</button></div></div>
+        <div class="product-grid">
+          <article class="product-card" data-category="kituri"><div class="image-wrap warm"><span class="tag">CEL MAI COMPLET</span><img src="assets/restorative-kit.png" alt="Kit complet de practică restaurativă" /></div><div class="product-info"><p class="category">KIT DE PRACTICĂ</p><h3>Kit restaurativ complet</h3><p class="desc">Modele, instrumentar și materiale pentru antrenament.</p><div class="product-bottom"><strong>490 lei</strong><button class="add" data-name="Kit restaurativ complet" data-price="490">Adaugă <span>+</span></button></div></div></article>
+          <article class="product-card" data-category="modele"><div class="image-wrap blue"><span class="tag">MODELE 3D</span><img src="assets/model-class-2.png" alt="Model mandibular posterior clasa II" /></div><div class="product-info"><p class="category">MODELE PENTRU RESTAURĂRI</p><h3>Model posterior clasa II</h3><p class="desc">5 piese pentru exerciții controlate de restaurare.</p><div class="product-bottom"><strong>103 lei</strong><button class="add" data-name="Model posterior clasa II" data-price="103">Adaugă <span>+</span></button></div></div></article>
+          <article class="product-card" data-category="digital"><div class="image-wrap paper"><span class="tag">DESCĂRCARE IMEDIATĂ</span><img src="assets/ebook-dexteritate.png" alt="E-book cu exerciții de dexteritate și lucru în oglindă" /></div><div class="product-info"><p class="category">E-BOOK PDF</p><h3>Dexteritate & lucru în oglindă</h3><p class="desc">50 de pagini de exerciții pentru precizie, control și simetrie.</p><div class="product-bottom"><strong>79 lei</strong><button class="add" data-name="E-book Dexteritate & lucru în oglindă" data-price="79">Adaugă <span>+</span></button></div></div></article>
+          <article class="product-card" data-category="modele"><div class="image-wrap soft"><img src="assets/model-maxillary.png" alt="Model maxilar posterior" /></div><div class="product-info"><p class="category">MODELE PENTRU RESTAURĂRI</p><h3>Model posterior maxilar</h3><p class="desc">5 piese cu anatomie detaliată, pentru antrenament zilnic.</p><div class="product-bottom"><strong>103 lei</strong><button class="add" data-name="Model posterior maxilar" data-price="103">Adaugă <span>+</span></button></div></div></article>
+        </div>
+        <a class="view-all" href="#produse">Vezi toate produsele <span>→</span></a>
+      </section>
+
+      <section id="despre" class="story"><div class="story-image"><img src="assets/ebook-practice.png" alt="Studentă folosind cartea de exerciții dentare" /></div><div class="story-copy"><p class="eyebrow">DE CE EMPATTY DENT</p><h2>Mai mult decât produse.<br><em>Un ritual al progresului.</em></h2><p>Am creat Empatty Dent pentru momentele dintre teorie și încrederea de a lucra. Fiecare model, instrument și exercițiu îți oferă spațiul de care ai nevoie pentru a repeta cu intenție.</p><a class="btn primary" href="#produse">Începe practica <span>→</span></a></div></section>
+
+      <section id="cum-functioneaza" class="steps section"><p class="eyebrow">SIMPLU, DE LA ALEGERE LA PRACTICĂ</p><h2>Progresul începe aici.</h2><div class="step-grid"><div><b>01</b><h3>Alegi resursa</h3><p>Găsește produsul potrivit nivelului și obiectivului tău.</p></div><div><b>02</b><h3>Primești rapid</h3><p>Produsele fizice ajung la tine, iar cele digitale sunt gata de descărcare.</p></div><div><b>03</b><h3>Exersezi cu sens</h3><p>Construiești precizie, dexteritate și încredere, o mișcare pe rând.</p></div></div></section>
+      <section id="contact" class="newsletter"><div><p class="eyebrow">RĂMÂI APROAPE</p><h2>Primește inspirație pentru practică.</h2></div><form><label class="sr-only" for="email">Adresa de e-mail</label><input id="email" type="email" placeholder="Adresa ta de e-mail" required /><button class="btn primary" type="submit">Abonează-mă <span>→</span></button></form></section>
+    </main>
+    <footer><a class="brand" href="#acasa"><span class="brand-mark">E</span><span>Empatty <i>Dent</i></span></a><p>Practica de azi, încrederea de mâine.</p><span>© 2026 Empatty Dent</span></footer>
+    <aside class="cart-drawer" aria-label="Coșul tău" aria-hidden="true"><div class="cart-head"><h2>Coșul tău</h2><button class="close-cart" aria-label="Închide">×</button></div><div class="cart-items"><p class="empty">Coșul tău este gol.</p></div><div class="cart-footer"><div><span>Total</span><strong class="cart-total">0 lei</strong></div><button class="btn primary checkout">Continuă către comandă <span>→</span></button></div></aside><div class="overlay"></div><div class="toast" role="status"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
