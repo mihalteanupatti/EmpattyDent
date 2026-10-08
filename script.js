@@ -33,6 +33,20 @@ document.querySelectorAll('.add').forEach(button=>button.onclick=()=>{
   if(existing)existing.qty++;else cart.push({name,price,qty:1});saveCart();renderCart();showToast('Produs adăugat în coș');
 });
 
+document.querySelectorAll('.pack-select').forEach(select=>{
+  const card=select.closest('.product-card'),button=card.querySelector('.add'),price=card.querySelector('.model-price');
+  const syncPack=()=>{const option=select.options[select.selectedIndex];price.textContent=`${option.value} lei`;button.dataset.price=option.value;button.dataset.name=`${button.dataset.baseName} (${option.textContent.split(' — ')[0]})`};
+  select.addEventListener('change',syncPack);syncPack();
+});
+
+const productSlugs={'Kit complet pentru restaurări dentare':'kit-complet','Restaurări clasa a II-a — maxilar':'clasa-ii-maxilar','Restaurări clasa a II-a — mandibulă':'clasa-ii-mandibula','Restaurări clasa I — maxilar':'clasa-i-maxilar','Restaurări clasa I — mandibulă':'clasa-i-mandibula','Dexteritate & lucru în oglindă':'dexteritate'};
+document.querySelectorAll('.product-card').forEach(card=>{
+  const slug=productSlugs[card.querySelector('h3')?.textContent.trim()];if(!slug)return;
+  card.classList.add('product-card-link');card.tabIndex=0;card.setAttribute('role','link');
+  const openProduct=event=>{if(event.target.closest('button,select'))return;window.location.href=`product.html?id=${slug}`};
+  card.addEventListener('click',openProduct);card.addEventListener('keydown',event=>{if(event.key==='Enter')openProduct(event)});
+});
+
 document.querySelectorAll('.filters button').forEach(button=>button.onclick=()=>{document.querySelector('.filters .active').classList.remove('active');button.classList.add('active');document.querySelectorAll('.product-card').forEach(card=>card.style.display=button.dataset.filter==='all'||card.dataset.category===button.dataset.filter?'block':'none')});
 document.querySelector('.menu-btn').onclick=e=>{const nav=document.querySelector('.header nav');nav.classList.toggle('open');e.currentTarget.setAttribute('aria-expanded',nav.classList.contains('open'))};
 
