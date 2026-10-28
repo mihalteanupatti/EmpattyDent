@@ -17,7 +17,14 @@ function openCheckout(){
   if(!cart.length){showToast('Adaugă cel puțin un produs în coș.');return}
   toggleCart(false);checkoutModal.classList.add('open');checkoutModal.setAttribute('aria-hidden','false');
   document.getElementById('order-products').textContent=cart.map(x=>`${x.name} × ${x.qty}`).join(', ');
-  document.getElementById('order-total').textContent=`${cart.reduce((s,x)=>s+x.price*x.qty,0)} lei`;
+  updateOrderSummary();
+}
+function updateOrderSummary(){
+  const subtotal=cart.reduce((s,x)=>s+x.price*x.qty,0),payment=document.querySelector('input[name="payment"]:checked')?.value||'Ramburs',paymentFee=payment==='Ramburs'?5:0;
+  document.getElementById('order-subtotal').textContent=`${subtotal} lei`;
+  document.getElementById('order-payment-fee').textContent=paymentFee?'+5 lei':'0 lei';
+  document.getElementById('order-total').textContent=`${subtotal+paymentFee} lei`;
+  document.getElementById('order-payment').textContent=payment;
 }
 function closeCheckout(){checkoutModal.classList.remove('open');checkoutModal.setAttribute('aria-hidden','true')}
 document.querySelector('.cart-button').onclick=()=>toggleCart(true);
@@ -27,6 +34,7 @@ document.querySelector('.checkout').onclick=openCheckout;
 document.querySelector('.close-checkout').onclick=closeCheckout;
 document.querySelector('.close-success').onclick=closeCheckout;
 checkoutModal.addEventListener('click',e=>{if(e.target===checkoutModal)closeCheckout()});
+document.querySelectorAll('input[name="payment"]').forEach(input=>input.addEventListener('change',updateOrderSummary));
 
 document.querySelectorAll('.add').forEach(button=>button.onclick=()=>{
   const name=button.dataset.name,price=+button.dataset.price;const existing=cart.find(x=>x.name===name);
@@ -56,8 +64,8 @@ document.querySelector('.newsletter form').onsubmit=async e=>{
 };
 
 document.getElementById('order-form').onsubmit=async e=>{
-  e.preventDefault();const form=e.currentTarget;const data=new FormData(form);const products=cart.map(x=>`${x.name} × ${x.qty}`).join(' | ');const totalValue=cart.reduce((s,x)=>s+x.price*x.qty,0);
-  const payload={type:'order',client:data.get('client'),phone:data.get('phone'),email:data.get('email'),county:data.get('county'),city:data.get('city'),address:data.get('address'),products,total:String(totalValue),notes:data.get('notes')||''};
+  e.preventDefault();const form=e.currentTarget;const data=new FormData(form);const products=cart.map(x=>`${x.name} × ${x.qty}`).join(' | ');const subtotal=cart.reduce((s,x)=>s+x.price*x.qty,0),payment=data.get('payment'),paymentFee=payment==='Ramburs'?5:0,totalValue=subtotal+paymentFee;
+  const payload={type:'order',client:data.get('client'),phone:data.get('phone'),email:data.get('email'),county:data.get('county'),city:data.get('city'),address:data.get('address'),products,total:String(totalValue),notes:data.get('notes')||'',payment};
   const button=form.querySelector('.order-submit');button.disabled=true;button.innerHTML='Se trimite…';
   try{await fetch(BACKEND_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/x-www-form-urlencoded;charset=UTF-8'},body:new URLSearchParams(payload)});form.hidden=true;document.querySelector('.order-success').hidden=false;cart=[];saveCart();renderCart()}catch(err){showToast('Comanda nu a putut fi trimisă. Încearcă din nou.')}finally{button.disabled=false;button.innerHTML='Trimite comanda <span>→</span>'}
 };
