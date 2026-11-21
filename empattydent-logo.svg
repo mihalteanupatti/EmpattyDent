@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Empatty Dent</title>
+  <desc id="desc">Dintele și instrumentul Empatty Dent, cu sloganul Practica de azi, încrederea de mâine.</desc>
+  <defs>
+    <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0b214d"/><stop offset="1" stop-color="#0878ed"/></linearGradient>
+    <linearGradient id="steel" x1="0" y1="0" x2="1" y2=".7"><stop stop-color="#63717f"/><stop offset=".25" stop-color="#f5f8fb"/><stop offset=".52" stop-color="#85919e"/><stop offset=".78" stop-color="#fff"/><stop offset="1" stop-color="#697785"/></linearGradient>
+    <linearGradient id="tooth" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#fff"/><stop offset=".52" stop-color="#edf1f4"/><stop offset="1" stop-color="#cbd3dc"/></linearGradient>
+    <linearGradient id="base" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#193b70"/><stop offset="1" stop-color="#081a39"/></linearGradient>
+  </defs>
+  <!-- The paired enamel-blue strokes echo the tooth-shaped brand mark. -->
+  <path d="M130 292C131 108 270 34 428 57c76 11 117 60 173 85 54 24 103 22 161-9C853 63 931 42 1018 86c90 46 123 142 93 242-21 69-68 128-99 191-30 61-32 116-40 172-8 48-30 73-61 69-49-7-78-103-110-176-31-69-70-104-144-103-72 1-110 38-141 108-32 72-59 169-108 177-36 6-56-24-64-74-10-63-10-118-39-178-31-65-80-125-99-190-8-28-12-55-10-82Z" fill="none" stroke="url(#blue)" stroke-width="21" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Faceted molar and enamel highlights. -->
+  <path d="M395 287c-27-38-22-82 6-104 31-24 61-8 91-24 30-16 39-51 74-53 37-2 49 35 81 50 28 14 61 4 85 27 28 28 23 67 2 105-20 35-16 67-20 103-3 32-14 57-37 59-31 2-41-49-61-69-22-23-51-20-71 3-19 22-31 68-60 67-27-1-34-38-39-70-6-37-26-65-51-98Z" fill="url(#tooth)" stroke="#c3cbd4" stroke-width="5" stroke-linejoin="round"/>
+  <path d="m428 212 70 42 22 70-74-23-24-89Zm171-91 1 108-42 36-34-104c29-16 39-38 75-40Zm15 112 106-49c28 28 23 67 2 105l-80 6-28-62Zm-101 91 79-20 69 22c-3 32-14 57-37 59-31 2-41-49-61-69-22-23-51-20-71 3-19 22-31 68-60 67-27-1-34-38-39-70Z" fill="#dce2e8" opacity=".72"/>
+  <path d="M424 198c29 6 52 0 76-13m34-23c24 23 43 43 69 53m55-12c-11 18-19 36-23 58m-114 38c23 18 45 22 70 15" fill="none" stroke="#fff" stroke-width="9" stroke-linecap="round" opacity=".82"/>
+  <!-- Dark-blue pedestal. -->
+  <path d="m405 430 184-37 188 38-20 91-174 41-170-44-8-89Z" fill="url(#base)"/>
+  <path d="m405 430 178 41 194-40m-194 40v91m-170-44 170 44 174-41" fill="none" stroke="#3d5d91" stroke-width="5" opacity=".7"/>
+  <!-- A stylised dental modelling instrument crossing the tooth. -->
+  <path d="m914 101-204 146c-35 25-56 51-76 83-14 22-29 34-55 45l-30 12c-11 4-15 15-9 24 6 9 17 10 28 4l38-21c23-13 39-30 53-52 17-26 39-48 68-67L934 133Z" fill="url(#steel)" stroke="#697785" stroke-width="5" stroke-linejoin="round"/>
+  <path d="m912 100 37-35 51 47-38 35Z" fill="url(#steel)" stroke="#697785" stroke-width="5" stroke-linejoin="round"/>
+  <path d="m585 410-28 15c-12 7-17 17-12 25 5 9 18 10 30 4l24-14" fill="none" stroke="#737f8c" stroke-width="8" stroke-linecap="round"/>
+  <!-- Wordmark and tagline. -->
+  <text x="28" y="656" fill="#0b214d" font-family="Arial, Helvetica, sans-serif" font-size="104" font-weight="500" letter-spacing="13" textLength="720" lengthAdjust="spacingAndGlyphs">EMPATTY</text>
+  <text x="792" y="656" fill="#0878ed" font-family="Arial, Helvetica, sans-serif" font-size="104" font-weight="500" letter-spacing="13" textLength="378" lengthAdjust="spacingAndGlyphs">DENT</text>
+  <text x="600" y="728" text-anchor="middle" fill="#102b59" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="500" letter-spacing="7" textLength="1080" lengthAdjust="spacingAndGlyphs">PRACTICA DE AZI, ÎNCREDEREA DE MÂINE</text>
+</svg>
